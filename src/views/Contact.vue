@@ -12,6 +12,8 @@
         { id: 'BR', name: 'Brazil' },
         { id: 'ZW', name: 'Zimbabwe' },
       ]"
+      :name="user.name"
+      :email="user.email"
       @submit="submit"
     />
   </div>
@@ -20,18 +22,19 @@
 <script>
 
 import ContactForm from '@/components/ContactForm.vue';
+import { mapState } from 'vuex';
 
 export default {
   name: 'Contact',
   components: {
     ContactForm,
   },
+  computed: {
+    ...mapState(['user']),
+  },
   methods: {
-    /**
-     * @type {{title: String, name: String, email: String, phone: String }}
-     */
     submit(payload) {
-      console.log('submit', payload);
+      console.log('contact form data', payload);
     },
   },
 };
