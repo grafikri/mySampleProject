@@ -52,10 +52,14 @@ export default {
   },
   computed: {
     ...mapState(['user']),
+
   },
   watch: {
     $route(to) {
       this.setTitle(to.name);
+    },
+    '$i18n.locale': function () {
+      this.setTitle(this.$route.name);
     },
   },
   created() {
