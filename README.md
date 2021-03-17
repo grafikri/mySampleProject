@@ -1,24 +1,17 @@
 # my-sample-projet
 
-## Project setup
-```
-npm install
-```
+## install and run project
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+#### Project requirements
 
-### Compiles and minifies for production
-```
-npm run build
-```
+- Nodejs >= 12.x.x
+- Npm >= 6.x.x
 
-### Lints and fixes files
 ```
-npm run lint
-```
+$ git clone https://github.com/grafikri/mySampleProject.git
+$ cd mySampleProject
+$ npm install
+$ npm run serve
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+# listen on http://localhost:8080/
+```
