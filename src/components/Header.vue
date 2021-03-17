@@ -25,16 +25,13 @@
 
           <!-- Right aligned nav items -->
           <b-navbar-nav class="ml-auto">
-            <b-nav-form>
-              <b-button
-                size="sm"
-                class="my-2 my-sm-0"
-                variant="light"
-                to="/contact"
-              >
-                Contact
-              </b-button>
-            </b-nav-form>
+            <b-nav-item
+              variant="light"
+              to="/contact"
+            >
+              Contact
+            </b-nav-item>
+
             <b-nav-item-dropdown
               text="Lang"
               right
@@ -75,13 +72,16 @@
 <script>
 
 import {
-  BNavbar, BNavbarBrand, BNavbarNav,
-  BCollapse, BNavItemDropdown,
-  BNavbarToggle, BDropdownItem,
+  BNavbar,
+  BNavbarBrand,
+  BNavbarNav,
+  BCollapse,
+  BNavItemDropdown,
+  BNavbarToggle,
+  BDropdownItem,
   BNavText,
   BIconBriefcaseFill,
-  BNavForm,
-  BButton,
+  BNavItem,
 } from 'bootstrap-vue';
 
 export default {
@@ -95,9 +95,8 @@ export default {
     BCollapse,
     BNavItemDropdown,
     BNavbarToggle,
+    BNavItem,
     BDropdownItem,
-    BNavForm,
-    BButton,
   },
   props: {
     title: {
