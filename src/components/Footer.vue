@@ -1,6 +1,6 @@
 <template>
   <div class="text-center">
-    I'm the footer
+    {{ $t('footer.text') }}
   </div>
 </template>
 

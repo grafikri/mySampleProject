@@ -5,39 +5,39 @@
     >
       <b-form-group
         id="input-group-2"
-        label="Your Name:"
+        :label="$t('form.yourName')"
         label-for="input-2"
       >
         <b-form-input
           id="input-2"
           v-model="form.name"
-          placeholder="Enter name"
+          :placeholder="$t('form.enterName')"
           required
         />
       </b-form-group>
       <b-form-group
         id="input-group-1"
-        label="Email address:"
+        :label="$t('form.emailAddress')"
         label-for="input-1"
       >
         <b-form-input
           id="input-1"
           v-model="form.email"
           type="email"
-          placeholder="Enter email"
+          :placeholder="$t('form.enterEmail')"
           required
         />
       </b-form-group>
       <b-form-group
         id="input-group-password"
-        label="Email address:"
+        :label="$t('form.password')"
         label-for="input-password"
       >
         <b-form-input
           id="input-password"
           v-model="form.password"
           type="password"
-          placeholder="Enter password"
+          :placeholder="$t('form.enterPassword')"
           required
         />
       </b-form-group>
@@ -46,7 +46,7 @@
         type="submit"
         variant="primary"
       >
-        Submit
+        {{ $t('button.submit') }}
       </b-button>
     </b-form>
   </div>
