@@ -127,9 +127,9 @@ export default {
       default: 'johndoe@mail.com',
     },
   },
-  data() {
-    return {
-      locales: [
+  computed: {
+    locales() {
+      return [
         {
           key: 'tr',
           value: this.$i18n.t('app.turkish'),
@@ -138,8 +138,8 @@ export default {
           key: 'en',
           value: this.$i18n.t('app.english'),
         },
-      ],
-    };
+      ];
+    },
   },
   methods: {
     /**
