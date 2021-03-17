@@ -27,6 +27,12 @@
           <b-navbar-nav class="ml-auto">
             <b-nav-item
               variant="light"
+              to="/"
+            >
+              Home
+            </b-nav-item>
+            <b-nav-item
+              variant="light"
               to="/contact"
             >
               Contact
