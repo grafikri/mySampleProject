@@ -68,6 +68,7 @@
             <b-nav-item
               v-if="!isLoggedIn"
               variant="light"
+              @click="$emit('handleClickLogin')"
             >
               Login
             </b-nav-item>
