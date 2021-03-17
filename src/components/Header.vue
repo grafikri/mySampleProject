@@ -112,7 +112,7 @@ export default {
   props: {
     title: {
       type: String,
-      default: 'This is my title',
+      default: '',
     },
     isLoggedIn: {
       type: Boolean,

@@ -8,6 +8,7 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: '/',
+    name: 'home',
     components: {
       default: () => import('@/views/Home.vue'),
       layout: MainLayout,
@@ -15,6 +16,7 @@ const routes = [
   },
   {
     path: '/contact',
+    name: 'contact',
     components: {
       default: () => import('@/views/Contact.vue'),
       layout: MainLayout,
