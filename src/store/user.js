@@ -8,7 +8,7 @@
  * @type {State}
  */
 const state = {
-  loggedIn: true,
+  loggedIn: false,
   name: null,
   email: null,
 };
