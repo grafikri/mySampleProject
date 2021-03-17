@@ -4,47 +4,47 @@
       @submit.stop.prevent="onSubmit"
     >
       <b-form-group
-        label="Your Name:"
+        :label="$t('form.yourName')"
         label-for="input-name"
       >
         <b-form-input
           id="input-name"
           v-model="form.name"
-          placeholder="Enter name"
+          :placeholder="$t('form.enterName')"
           maxlength="100"
           required
         />
       </b-form-group>
       <b-form-group
-        label="Email address:"
+        :label="$t('form.emailAddress')"
         label-for="input-email"
       >
         <b-form-input
           id="input-email"
           v-model="form.email"
           type="email"
-          placeholder="Enter email"
+          :placeholder="$t('form.enterEmail')"
           maxlength="100"
           required
           :state="isEmailValid"
         />
       </b-form-group>
       <b-form-group
-        label="Your phone number:"
+        :label="$t('form.yourPhoneNumber')"
         label-for="input-phone"
       >
         <b-form-input
           id="input-phone"
           v-model="form.phonenumber"
           type="tel"
-          placeholder="Enter cell phone e.g. - 5551234567"
+          :placeholder="$t('form.enterCellPhoneNumber')"
           required
           :state="isPhoneNumberValid"
         />
       </b-form-group>
 
       <b-form-group
-        label="Country:"
+        :label="$t('form.country')"
         label-for="input-text"
       >
         <vue-bootstrap-typeahead
@@ -55,18 +55,18 @@
           @hit="handleSelected"
         />
         <b-form-invalid-feedback :state="isCountryValid">
-          You must select a country from list
+          {{ $t('form.countryDesc') }}
         </b-form-invalid-feedback>
       </b-form-group>
 
       <b-form-group
-        label="Your thoughts:"
+        :label="$t('form.yourThoughts')"
         label-for="input-text"
       >
         <b-form-textarea
           id="input-text"
           v-model="form.text"
-          placeholder="Enter something..."
+          :placeholder="$t('form.enterSomething')"
           rows="3"
           max-rows="6"
           maxlength="255"
@@ -78,7 +78,7 @@
         type="submit"
         variant="primary"
       >
-        Submit
+        {{ $t('button.submit') }}
       </b-button>
     </b-form>
   </div>
@@ -164,6 +164,9 @@ export default {
     },
     email(newVal) {
       this.form.email = newVal;
+    },
+    countries() {
+      this.countryKey = Math.random();
     },
   },
   methods: {

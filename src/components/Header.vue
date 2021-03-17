@@ -29,30 +29,25 @@
               variant="light"
               to="/"
             >
-              Home
+              {{ $t('button.home') }}
             </b-nav-item>
             <b-nav-item
               variant="light"
               to="/contact"
             >
-              Contact
+              {{ $t('button.contact') }}
             </b-nav-item>
 
             <b-nav-item-dropdown
-              text="Lang"
+              :text="$t('app.lang')"
               right
             >
-              <b-dropdown-item href="#">
-                EN
-              </b-dropdown-item>
-              <b-dropdown-item href="#">
-                ES
-              </b-dropdown-item>
-              <b-dropdown-item href="#">
-                RU
-              </b-dropdown-item>
-              <b-dropdown-item href="#">
-                FA
+              <b-dropdown-item
+                v-for="(item, index) in locales"
+                :key="index"
+                @click="handleLocaleClick(item)"
+              >
+                {{ item.value }}
               </b-dropdown-item>
             </b-nav-item-dropdown>
 
@@ -68,7 +63,7 @@
                 {{ userEmail }}
               </b-dropdown-item>
               <b-dropdown-item @click="$emit('handleClickSignOut')">
-                Sign Out
+                {{ $t('button.logout') }}
               </b-dropdown-item>
             </b-nav-item-dropdown>
             <b-nav-item
@@ -76,7 +71,7 @@
               variant="light"
               @click="$emit('handleClickLogin')"
             >
-              Login
+              {{ $t('button.login') }}
             </b-nav-item>
           </b-navbar-nav>
         </b-collapse>
@@ -130,6 +125,28 @@ export default {
     userEmail: {
       type: String,
       default: 'johndoe@mail.com',
+    },
+  },
+  data() {
+    return {
+      locales: [
+        {
+          key: 'tr',
+          value: this.$i18n.t('app.turkish'),
+        },
+        {
+          key: 'en',
+          value: this.$i18n.t('app.english'),
+        },
+      ],
+    };
+  },
+  methods: {
+    /**
+     * @param {{key: String, value: String}} item
+     */
+    handleLocaleClick(item) {
+      this.$i18n.locale = item.key;
     },
   },
 };

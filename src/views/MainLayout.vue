@@ -16,7 +16,7 @@
 
     <b-modal
       ref="login-modal"
-      title="Login"
+      :title="$t('app.login')"
       hide-footer
     >
       <LoginForm @submit="loginSubmit" />
