@@ -50,18 +50,27 @@
               </b-dropdown-item>
             </b-nav-item-dropdown>
 
-            <b-nav-item-dropdown right>
+            <b-nav-item-dropdown
+              v-if="isLoggedIn"
+              right
+            >
               <!-- Using 'button-content' slot -->
               <template #button-content>
-                <em>User</em>
+                <em>{{ userName }}</em>
               </template>
-              <b-dropdown-item href="#">
-                Profile
+              <b-dropdown-item>
+                {{ userMail }}
               </b-dropdown-item>
-              <b-dropdown-item href="#">
+              <b-dropdown-item @click="$emit('handleClickSignOut')">
                 Sign Out
               </b-dropdown-item>
             </b-nav-item-dropdown>
+            <b-nav-item
+              v-if="!isLoggedIn"
+              variant="light"
+            >
+              Login
+            </b-nav-item>
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>
@@ -102,6 +111,18 @@ export default {
     title: {
       type: String,
       default: 'This is my title',
+    },
+    isLoggedIn: {
+      type: Boolean,
+      default: true,
+    },
+    userName: {
+      type: String,
+      default: 'John Doe',
+    },
+    userMail: {
+      type: String,
+      default: 'johndoe@mail.com',
     },
   },
 };
