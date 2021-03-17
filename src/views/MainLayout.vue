@@ -1,6 +1,7 @@
 <template>
   <div>
     <Header
+      :title="title"
       :is-logged-in="user.loggedIn"
       :user-name="user.name"
       :user-email="user.email"
@@ -44,14 +45,46 @@ export default {
     BModal,
     BContainer,
   },
+  data() {
+    return {
+      title: 'Page Title',
+    };
+  },
   computed: {
     ...mapState(['user']),
+
+  },
+  watch: {
+    $route(to) {
+      this.setTitle(to.name);
+    },
+    '$i18n.locale': function () {
+      this.setTitle(this.$route.name);
+    },
+  },
+  created() {
+    this.setTitle(this.$route.name);
   },
   methods: {
     ...mapMutations('user', [
       'login',
       'logout',
     ]),
+    /**
+     * @param {String} path
+     */
+    setTitle(path) {
+      switch (path) {
+        case 'home':
+          this.title = this.$i18n.t('pages.home.title');
+          break;
+        case 'contact':
+          this.title = this.$i18n.t('pages.contact.title');
+          break;
+        default:
+          this.title = this.$i18n.t('pages.home.title');
+      }
+    },
     handleClickSignOut() {
       this.logout();
     },
