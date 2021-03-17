@@ -59,7 +59,7 @@
                 <em>{{ userName }}</em>
               </template>
               <b-dropdown-item>
-                {{ userMail }}
+                {{ userEmail }}
               </b-dropdown-item>
               <b-dropdown-item @click="$emit('handleClickSignOut')">
                 Sign Out
@@ -120,7 +120,7 @@ export default {
       type: String,
       default: 'John Doe',
     },
-    userMail: {
+    userEmail: {
       type: String,
       default: 'johndoe@mail.com',
     },
