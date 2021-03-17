@@ -8,7 +8,10 @@
       @handleClickLogin="handleClickLogin"
     />
 
-    <slot />
+    <b-container>
+      <slot />
+    </b-container>
+
     <Footer />
 
     <b-modal
@@ -30,7 +33,7 @@ import Footer from '@/components/Footer.vue';
 
 import { mapMutations, mapState } from 'vuex';
 
-import { BModal } from 'bootstrap-vue';
+import { BModal, BContainer } from 'bootstrap-vue';
 
 export default {
   name: 'MainLayout',
@@ -39,6 +42,7 @@ export default {
     Footer,
     LoginForm,
     BModal,
+    BContainer,
   },
   computed: {
     ...mapState(['user']),
