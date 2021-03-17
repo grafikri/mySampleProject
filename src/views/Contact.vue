@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1>{{ $t('pages.contact.title') }}</h1>
+    <p>{{ $t('pages.contact.desc') }}</p>
     <ContactForm
       :countries="countries"
       :name="user.name"
@@ -51,7 +52,7 @@ export default {
         case 'en':
           return enCountries;
         default:
-          return trCountries;
+          return enCountries;
       }
     },
   },
